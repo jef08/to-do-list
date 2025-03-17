@@ -8,7 +8,7 @@ module.exports = {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
-    publicPath: '/to-do-list/'
+    publicPath: '/dist/'
   },
   devtool: "eval-source-map",
   devServer: {
@@ -19,6 +19,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
+      inject: 'body',
+      scriptLoading: 'module',
     }),
   ],
   module: {
